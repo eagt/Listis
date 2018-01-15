@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-	root to: 'lists#index'
+root to: 'lists#index'
+get 'static_pages/home'
+get 'static_pages/contact'
 
   resources :lists
   
-  get 'static_pages/home'
 
-  get 'static_pages/contact'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

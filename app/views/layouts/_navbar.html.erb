@@ -1,11 +1,29 @@
-
+<% if false %> <%# COMMENTED WHILE FINISHING. I think this can be removed later, it seems that doesn't help. %>
+<div class="collapse" id="33collapsingnavbar">
+  <div class="collapse-bg p-a-1">
+    <div class='card'>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <%= link_to 'Home', static_pages_home_path, class: "nav-link #{yield(:home_active)}" %>
+        </li>
+        <li class="list-group-item">
+          <%= link_to 'Contact', static_pages_contact_path, class: "nav-link #{yield(:contact_active)}" %>
+        </li>
+        <li class="list-group-item">
+          <%= link_to 'lists', root_path, class: "nav-link #{yield(:list_active)}" %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<% end %>
 
 <nav class="navbar navbar-expand-md "> <%#<nav class="navbar-expand-md will expand from medium screen size up %>
 
 <%# Brand %>
-    <a class = 'navbar-brand' href='/'> <%# href='/' will point to the same root define in routers %>
-     List<span class = different '>is </span><%# Will divide the brand name into two parts allowing me to give two different colors %>
-    </a>
+<a class = 'navbar-brand' href='/'> <%# href='/' will point to the same root define in routers %>
+ List<span class = different '>is </span><%# Will divide the brand name into two parts allowing me to give two different colors %>
+</a>
 
 <%# Toggle button %>
   <button class="navbar-toggler navbar-toggler-right navbar-light " type="button" data-toggle="collapse" data-target="#collapsingnavbar" aria-controls="collapsingnavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,11 +31,14 @@
   </button>
     <div class="collapse navbar-collapse" id="collapsingnavbar">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <%= link_to 'Home', static_pages_home_path, class: "nav-link #{yield(:home_active)}" %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <%= link_to 'Contact', static_pages_contact_path, class: "nav-link #{yield(:contact_active)}" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Lists', root_path, class: "nav-link #{yield(:list_active)}" %>
           </li>
         </ul>
       </div>
