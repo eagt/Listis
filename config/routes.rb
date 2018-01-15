@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+
+	root to: 'lists#index'
+
+  resources :lists
+  
   get 'static_pages/home'
 
   get 'static_pages/contact'

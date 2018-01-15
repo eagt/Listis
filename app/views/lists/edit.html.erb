@@ -1,0 +1,9 @@
+<% provide(:page_title, "Edit #{@list.name}") %>
+
+
+<h1>Editing List</h1>
+
+<%= render 'form', list: @list %>
+
+<%= link_to 'Show', @list %> |
+<%= link_to 'Back', lists_path %>

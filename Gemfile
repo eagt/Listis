@@ -6,6 +6,12 @@ git_source(:github) do |repo_name|
 end
 
 
+gem 'bootstrap', '~> 4.0.0.beta3'  
+gem 'jquery-rails' 
+gem 'friendly_id', '~> 5.1.0' 
+
+
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
