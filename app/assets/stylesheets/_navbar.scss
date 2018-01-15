@@ -12,6 +12,13 @@
             }
                         
             .navbar-toggler {
-                border: 1px solid; 
-            }       
+                border: 1px solid; //this will give the border to the toggle button
+            }
+            
+            .nav-link {
+                  color: primary-color-light !important;
+                  &.active {
+                    color: black !important; // Changing the color when the tab/link is active
+                  }
+            }
     }
