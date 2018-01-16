@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  list: one
+  name: MyString
+  setOn: 2018-01-16 06:40:16
+  deadLine: 2018-01-16 06:40:16
+  fineshedOn: 2018-01-16 06:40:16
+  status: MyString
+
+two:
+  list: two
+  name: MyString
+  setOn: 2018-01-16 06:40:16
+  deadLine: 2018-01-16 06:40:16
+  fineshedOn: 2018-01-16 06:40:16
+  status: MyString

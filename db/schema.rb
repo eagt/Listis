@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180111104354) do
+ActiveRecord::Schema.define(version: 20180116064016) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -29,7 +29,23 @@ ActiveRecord::Schema.define(version: 20180111104354) do
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "setOn"
+    t.datetime "deadLine"
+    t.datetime "fineshedOn"
+    t.string "status"
     t.index ["slug"], name: "index_lists_on_slug", unique: true
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.integer "list_id"
+    t.string "name"
+    t.datetime "setOn"
+    t.datetime "deadLine"
+    t.datetime "fineshedOn"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_tasks_on_list_id"
   end
 
 end
