@@ -11,11 +11,13 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require jquery3
+//= require jquery
+//= require jquery_ujs
 // Bootstrap tooltips and popovers depend on popper.js for positioning
-//= require popper      
+//= require popper  
+//= require turbolinks    
 //= require bootstrap-sprockets
 //= require bootstrap
-//= require turbolinks
+//= require cocoon
 //= require_tree .
 

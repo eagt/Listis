@@ -1,14 +1,11 @@
 class List < ApplicationRecord
+	
+has_many :tasks, dependent: :destroy
+accepts_nested_attributes_for :tasks,
+							  allow_destroy: true, 
+							  reject_if: proc{|attributes| attributes [name].blank?}
 
-  extend FriendlyId
-  friendly_id :name, use: :slugged
 
-# Also define a method call should_generate_new_friendly_id?
-# The method will check if the name of the List has changed and if so, it will change it too as we are calling slug on the name
-
-  def should_generate_new_friendly_id?
-  	name_changed?
-  end
-
-  has_many :tasks
 end
+
+

@@ -1,22 +1,29 @@
-<%= form_with(model: list, local: true) do |form| %>
-  <% if list.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(list.errors.count, "error") %> prohibited this list from being saved:</h2>
+<%= simple_form_for(@list) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% list.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :list_name %>
+  <div class="form-inputs">
+    <%= f.input :name %>
   </div>
+  <h3>Tasks</h3>
 
-  <div class="actions">
-    <%= form.submit %>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Task Name</th>
+        <th>Set On</th>
+      </tr>
+    </thead>
+    <tbody class='tasks'>
+      <%= f.simple_fields_for :tasks do |builder| %>
+        <%= render 'task_fields', f: builder %>
+      <% end %>
+    </tbody>
+
+  </table>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+    <%= link_to_add_association 'Add Task', f, :tasks, class: 'btn btn-primary', data: { association_insertion_node: '.tasks', association_insertion_method: :append } %>
   </div>
 <% end %>
